@@ -21,7 +21,7 @@ function App() {
         {/* <Route path='/' element={<Navigate to="/login" replace />} />
         <Route path='/login' element={<Login />} /> */}
         <Route path='/' element={<Layout />}>
-          <Route path='/google-form' element={<GoogleForm />} />
+          <Route path='/' element={<GoogleForm />} />
           <Route path='/conatct-form' element={<ContactForm/>}/>
          
 

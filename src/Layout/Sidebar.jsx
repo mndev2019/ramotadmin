@@ -27,10 +27,10 @@ const Sidebar = ({ closeSidebar }) => {
 
                 <li>
                     <Link
-                        to="/google-form"
+                        to="/"
                         onClick={closeSidebar}
                         className={`flex items-center gap-3 px-3 py-2 rounded-lg transition
-                        ${location.pathname === "/google-form"
+                        ${location.pathname === "/"
                                 ? "bg-indigo-500 text-white"
                                 : "hover:bg-[#334155]"
                             }`}
