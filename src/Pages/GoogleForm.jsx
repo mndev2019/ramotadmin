@@ -4,6 +4,7 @@ import SectionTitle from "../Component/SectionTitle";
 import axios from "axios";
 import moment from "moment";
 import { Base_Url } from "../API/Base_Url";
+import { toast } from "react-toastify";
 
 const GoogleForm = () => {
     const [data, setData] = useState([]);
@@ -66,6 +67,18 @@ const GoogleForm = () => {
         link.href = url;
         link.download = "google-customers.csv";
         link.click();
+    };
+     // Delete
+    const handleDelete = async (id) => {
+        if (!window.confirm("Delete this entry?")) return;
+
+        try {
+            await axios.delete(`${Base_Url}/google-service-enquiry/${id}`);
+            setData(prev => prev.filter(item => item._id !== id));
+            toast.success("Deleted");
+        } catch {
+            toast.error("Delete failed");
+        }
     };
 
     return (
@@ -132,6 +145,7 @@ const GoogleForm = () => {
                                 <th className="p-3 text-start">Email</th>
                                 <th className="p-3 text-start">Phone</th>
                                 <th className="p-3 text-start">Date</th>
+                                <th className="p-3 text-start">Action</th>
                             </tr>
                         </thead>
 
@@ -154,6 +168,14 @@ const GoogleForm = () => {
                                         <td>{item.contactNo}</td>
                                         <td>
                                             {moment(item.createdAt).format("DD MMM YYYY")}
+                                        </td>
+                                        <td>
+                                            <button
+                                                onClick={() => handleDelete(item._id)}
+                                                className="text-red-500 text-xl"
+                                            >
+                                                <MdDelete />
+                                            </button>
                                         </td>
 
                                     </tr>
