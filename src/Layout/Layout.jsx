@@ -1,22 +1,15 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import logo from '../assets/Image/logo.png'
 
 const Layout = () => {
-    const navigate = useNavigate();
-    const token = localStorage.getItem("token");
+  
 
     const [open, setOpen] = useState(false);
 
-    useEffect(() => {
-        if (token) {
-            navigate("/google-form");
-        } else {
-            navigate("/login");
-        }
-    }, [token, navigate]);
+   
 
     return (
         <>
