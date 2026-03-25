@@ -5,6 +5,7 @@ import Layout from './Layout/Layout'
 import GoogleForm from './Pages/GoogleForm'
 import { ToastContainer } from 'react-toastify'
 import ContactForm from './Pages/ContactForm'
+import Blog from './Pages/Blog'
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<GoogleForm />} />
           <Route path='/conatct-form' element={<ContactForm/>}/>
+          <Route path='blog' element={<Blog/>}/>
          
 
 

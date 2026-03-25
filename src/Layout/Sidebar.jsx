@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from '../assets/Image/logo.png';
 import googleform from '../assets/Image/googleform.png';
 import contact from '../assets/Image/contacts.png';
-
+import blog from '../assets/Image/blog.png'
 const Sidebar = ({ closeSidebar }) => {
     const location = useLocation();
 
@@ -52,6 +52,20 @@ const Sidebar = ({ closeSidebar }) => {
                     >
                         <img src={contact} className="h-[22px]" />
                         <span>Contact Enquiry</span>
+                    </Link>
+                </li>
+                  <li>
+                    <Link
+                        to="/blog"
+                        onClick={closeSidebar}
+                        className={`flex items-center gap-3 px-3 py-2 rounded-lg transition
+                        ${location.pathname === "/blog"
+                                ? "bg-indigo-500 text-white"
+                                : "hover:bg-[#334155]"
+                            }`}
+                    >
+                        <img src={blog} className="h-[22px]" />
+                        <span>Blog</span>
                     </Link>
                 </li>
 
