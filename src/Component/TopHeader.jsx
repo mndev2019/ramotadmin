@@ -13,7 +13,7 @@ const TopHeader = () => {
                                     <div className="px-5">
                                         <div className="">
                                             <p className="text-[#A6A6A6] text-[15px]">Hello</p>
-                                            <h4 className="text-[16px] font-[600]">Welcome Back!</h4>
+                                            <h4 className="text-[16px] font-[600]">Welcome Back</h4>
 
                                         </div>
                                     </div>
