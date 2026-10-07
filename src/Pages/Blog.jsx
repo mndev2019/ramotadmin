@@ -215,7 +215,8 @@ const Blog = () => {
                                             className="bg-white text-sm  shadow-sm rounded"
                                         >
                                             <td className="p-3 font-medium break-words">
-                                                <img src={`${Base_Url}/${blog.image}`} className='h-20 w-20 rounded-fill' />
+                                                {/* <img src={`${Base_Url}/${blog.image}`} className='h-20 w-20 rounded-fill' /> */}
+                                                 <img src={blog.image} className='h-20 w-20 rounded-fill' />
                                             </td>
                                             {/* Title */}
                                             <td className="p-3 font-medium break-words">
